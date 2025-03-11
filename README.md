@@ -1,7 +1,5 @@
 # CalendarAgent
 
-# CalendarAgent
-
 The feature branches represent different basic architectures of the fundamental agent architecture.
 
 - **Chaining**: This branch focuses on creating a sequence of operations where the output of one operation serves as the input for the next.
