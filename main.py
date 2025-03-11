@@ -1,6 +1,6 @@
 from client import client
 from store import messages
-from calendar_tools import extract_event_info, parse_event_details, generate_confirmation, process_calendar_request
+from calendar_tools import process_calendar_request
 
 if __name__ == "__main__":
 
@@ -9,7 +9,12 @@ if __name__ == "__main__":
 
     print(conf_1)
 
-    user_input_2 = "what is the capital of South Africa"
+    user_input_2 = "Modify Event for tomorrow from 3pm to 4pm pst with Alice and Bob to talk about the progress of the project"
     conf_2 = process_calendar_request(user_input=user_input_2)
 
     print(conf_2)
+
+    user_input_3 = "what is the capital of South Africa"
+    conf_3 = process_calendar_request(user_input=user_input_3)
+
+    print(conf_3)
