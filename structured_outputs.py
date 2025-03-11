@@ -35,10 +35,20 @@ class ModifyEventDetails(BaseModel):
     changes: list[Change] = Field(description="List of changes to make")
     participants_to_add: list[str] = Field(description="participants that needs to be added")
     participants_to_remove: list[str] = Field(description="participants that needs to be removed")
-    
+
 class EventConfirmation(BaseModel):
     """Generate confirmation message"""
     confirmation_message: str = Field(
         description="confirmation message in natural language")
     calendar_link: Optional[str] = Field(
         description="generated calendar link if applicable")
+
+class CalendarValidation(BaseModel):
+    """Check if the request is a calendar request"""
+    is_calendar_request: bool = Field(description="Weather the request is a calendar request or not")
+    confidence: float = Field(description="Confidential score between 0 and 1")
+
+class SecurityCheck(BaseModel):
+    """Security check for the user input"""
+    is_safe: bool = Field(description="Weather the input appears to be safe or not")
+    risk_flags: list[str] = Field(description="List of potential security concerns")
